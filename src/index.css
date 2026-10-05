@@ -1,0 +1,411 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper-bg: #FCF9F6;
+    --paper-rose: #FAF0E8;
+    --rose-blush: #E8C5B8;
+    --rose-accent: #C47C68;
+    --gold-accent: #C5A059;
+    --charcoal: #2A2421;
+    --graphite: #3E3632;
+    --line-border: #E5D5C5;
+  }
+
+  body {
+    background-color: #FAF5F0;
+    color: #2A2421;
+    overflow-x: hidden;
+  }
+}
+
+/* Paper & Magazine Textures */
+.paper-texture {
+  background-color: #FCF9F6;
+}
+
+.paper-grain {
+  position: relative;
+}
+
+/* Girlish/Chic sketchy border */
+.sketch-border {
+  border: 1.5px solid #3E3632;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.sketch-border-subtle {
+  border: 1px solid rgba(196, 124, 104, 0.3);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/* Tape styling with gentle blush rose hue */
+.tape-top {
+  position: relative;
+}
+.tape-top::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 90px;
+  height: 24px;
+  background-color: rgba(245, 230, 222, 0.85);
+  border: 1px solid rgba(229, 200, 185, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(1px);
+}
+
+/* Magazine 3D Leaf Animation */
+.magazine-page-enter {
+  animation: pageTurn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageTurn {
+  0% {
+    opacity: 0;
+    transform: rotateY(-8deg) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+/* Cinema Room Glow */
+.cinema-glow {
+  box-shadow: 0 0 50px -10px rgba(197, 160, 89, 0.25), 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Polaroid & Photo Reveal */
+.polaroid-develop {
+  animation: developPhoto 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes developPhoto {
+  0% {
+    filter: grayscale(0.8) contrast(1.3) brightness(0.9);
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  100% {
+    filter: grayscale(0) contrast(1.02) brightness(1);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.photo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.photo-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 60%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  animation: shimmerPass 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shimmerPass {
+  0%, 70% {
+    transform: rotate(25deg) translateY(-100%);
+  }
+  100% {
+    transform: rotate(25deg) translateY(100%);
+  }
+}
+
+.scrapbook-polaroid {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.scrapbook-polaroid:hover {
+  transform: translateY(-4px) rotate(0deg) scale(1.02);
+  box-shadow: 0 15px 30px -10px rgba(196, 124, 104, 0.25);
+}
+
+/* Classified Stamp */
+.classified-stamp {
+  border: 1.5px solid #C47C68;
+  color: #C47C68;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.18em;
+  padding: 3px 10px;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+/* Pencil underline */
+.pencil-draw-line {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawStroke 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF0E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4A373;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C47C68;
+}
+
+/* ==========================================================================
+   DOB ENTRY GATE & LUXURY BURGUNDY CANDLELIGHT PALETTE
+   ========================================================================== */
+.dob-gate-bg {
+  background: radial-gradient(circle at 50% 45%, #3A0D1E 0%, #260B18 55%, #140610 100%);
+  color: #FFF8ED;
+}
+
+.candlelight-glow {
+  background: radial-gradient(circle, rgba(216, 184, 120, 0.15) 0%, rgba(58, 13, 30, 0) 70%);
+}
+
+.dob-gold-border {
+  border: 1px solid rgba(216, 184, 120, 0.35);
+  transition: all 0.3s ease;
+}
+
+.dob-gold-border:focus-within, .dob-gold-border:hover {
+  border-color: #D8B878;
+  box-shadow: 0 0 20px -3px rgba(216, 184, 120, 0.35);
+}
+
+.gold-underline {
+  position: relative;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #D8B878, transparent);
+  transition: width 0.4s ease;
+}
+.gold-underline:focus-within::after {
+  width: 100%;
+}
+
+/* Shake Animation for Incorrect DOB */
+.shake-anim {
+  animation: dobShake 0.45s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes dobShake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+  40%, 60% { transform: translate3d(5px, 0, 0); }
+}
+
+/* Gold Dot Expanding Film Reveal */
+.gold-expand-beam {
+  animation: expandBeam 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes expandBeam {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.01);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* Slow rotating luxury stamp */
+.slow-spin {
+  animation: slowSpin 35s linear infinite;
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   POST-DOB CINEMATIC ATMOSPHERE ANIMATIONS & LUXURY STYLES
+   ========================================================================== */
+
+@keyframes luxuryGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatingVeins {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.16; }
+  50% { transform: scale(1.08) rotate(2deg); opacity: 0.24; }
+  100% { transform: scale(1) rotate(-1deg); opacity: 0.16; }
+}
+
+@keyframes slowOrbFloat1 {
+  0% { transform: translate(5vw, 10vh) scale(1); }
+  33% { transform: translate(45vw, 40vh) scale(1.15); }
+  66% { transform: translate(25vw, 75vh) scale(0.9); }
+  100% { transform: translate(5vw, 10vh) scale(1); }
+}
+
+@keyframes slowOrbFloat2 {
+  0% { transform: translate(70vw, 70vh) scale(1.1); }
+  33% { transform: translate(20vw, 30vh) scale(0.85); }
+  66% { transform: translate(60vw, 10vh) scale(1.2); }
+  100% { transform: translate(70vw, 70vh) scale(1.1); }
+}
+
+@keyframes cinematicLightSweep {
+  0% { background-position: 250% 0; opacity: 0; }
+  15% { opacity: 0.28; }
+  45% { background-position: -150% 0; opacity: 0.28; }
+  50%, 100% { background-position: -150% 0; opacity: 0; }
+}
+
+/* Luxury Editorial Content Card (Crystal-clear readability over animated atmosphere) */
+.luxury-content-card {
+  background-color: rgba(250, 240, 232, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 
+    0 20px 50px -10px rgba(18, 5, 12, 0.45),
+    0 0 0 1px rgba(216, 184, 120, 0.25);
+}
+
+/* ==========================================================================
+   DYNAMIC CINEMATIC TRANSITIONS (Left, Right, Up, Down, Center Bloom)
+   ========================================================================== */
+
+.anim-slide-left {
+  animation: filmSlideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-slide-right {
+  animation: filmSlideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-slide-top {
+  animation: filmSlideInTop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-slide-bottom {
+  animation: filmSlideInBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-bloom-center {
+  animation: filmBloomCenter 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes filmSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%) scale(0.92);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes filmSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40%) scale(0.92);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes filmSlideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40%) scale(0.92);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes filmSlideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(40%) scale(0.92);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes filmBloomCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-2deg);
+    filter: brightness(1.8) blur(12px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.2) blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1) blur(0);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
