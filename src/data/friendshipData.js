@@ -197,26 +197,15 @@ export const friendshipData = {
   },
 
   // --------------------------------------------------------------------------
-  // SECTION 7: PENCIL PORTRAIT
+  // SECTION 7: INTERACTIVE MEMORY PUZZLE
   // --------------------------------------------------------------------------
   portraitPath: "/assets/portrait.jpg",
-  fallbackPortrait: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80",
-  portraitDedication: "I hand-drew this for you, Lilly.",
-  finalMessage: "Some memories deserve to exist somewhere outside our minds — etched in graphite forever.",
+  fallbackPortrait: "/assets/drawing-reference-photo.jpg",
+  portraitDedication: "Our memory captured in this beautiful frame, Lilly 🌸",
+  finalMessage: "Some memories are timeless — etched into the story of our friendship forever.",
 
   // --------------------------------------------------------------------------
-  // SECTION 8: PHYSICAL SURPRISE
-  // --------------------------------------------------------------------------
-  physicalReveal: {
-    pause1: "There is just one problem...",
-    pause2: "A picture on a screen could never hold the real weight of my love.",
-    pause3: "So...",
-    headline: "LOOK BEHIND YOU.",
-    cta: "I HAVE IT!"
-  },
-
-  // --------------------------------------------------------------------------
-  // SECTION 9: CLOSING PROMISE & BIRTHDAY FINALE
+  // SECTION 8: CLOSING PROMISE & BIRTHDAY FINALE
   // --------------------------------------------------------------------------
   closing: {
     title: "HAPPY 21ST BIRTHDAY, LILLY 🌸",

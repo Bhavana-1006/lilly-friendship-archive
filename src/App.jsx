@@ -30,7 +30,7 @@ export default function App() {
   };
 
   const handleNext = () => {
-    setCurrentStage(prev => Math.min(prev + 1, 9));
+    setCurrentStage(prev => Math.min(prev + 1, 8));
   };
 
   const handlePrev = () => {
@@ -63,7 +63,7 @@ export default function App() {
       <div className="relative z-30">
         <EditorialNav
           currentStage={currentStage}
-          totalStages={9}
+          totalStages={8}
           onSelectStage={handleSelectStage}
           onRestart={handleRestart}
         />
@@ -78,8 +78,7 @@ export default function App() {
         {currentStage === 5 && <CuriosityTeaser onNext={handleNext} onPrev={handlePrev} />}
         {currentStage === 6 && <CinematicFilmRoom onNext={handleNext} onPrev={handlePrev} />}
         {currentStage === 7 && <PortraitReveal onNext={handleNext} onPrev={handlePrev} />}
-        {currentStage === 8 && <PhysicalReveal onNext={handleNext} />}
-        {currentStage === 9 && <ClosingPromise onRestart={handleRestart} />}
+        {currentStage === 8 && <ClosingPromise onRestart={handleRestart} />}
       </main>
 
       {/* 4. Luxury Footer */}

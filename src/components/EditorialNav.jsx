@@ -9,8 +9,7 @@ const stages = [
   "21st Birthday",
   "The Suspense",
   "Cinematic Film",
-  "The Artwork",
-  "Look Behind",
+  "The Puzzle",
   "Grand Finale"
 ];
 

@@ -94,21 +94,21 @@ export default function PortraitReveal({ onNext, onPrev }) {
       <div className="text-center mb-8 space-y-2">
         <div className="inline-flex items-center gap-1.5 px-4 py-1 bg-[#3A0D1E]/90 border border-[#D8B878]/40 rounded-full font-mono text-[11px] text-[#D8B878] uppercase tracking-widest shadow-sm">
           <Feather className="w-3.5 h-3.5 text-[#D8B878]" />
-          <span>HAND-DRAWN ARTWORK // INTERACTIVE PUZZLE</span>
+          <span>MEMORIES PUZZLE // INTERACTIVE REVEAL</span>
         </div>
 
         <h2 className="font-editorial text-3xl sm:text-5xl text-[#2A2421] font-bold uppercase tracking-tight">
-          {isSolved ? "THE HAND-DRAWN PORTRAIT" : "PIECE TOGETHER OUR MEMORY"}
+          {isSolved ? "OUR CHERISHED MEMORY" : "PIECE TOGETHER OUR MEMORY"}
         </h2>
 
         <p className="font-serif text-base sm:text-lg text-[#C47C68] italic max-w-lg mx-auto font-medium">
           {isSolved 
-            ? "Every graphite line was etched for you, Lilly." 
-            : "Click any two puzzle tiles to swap them and reconstruct the sketch."}
+            ? "A beautiful memory captured in time, piece by piece." 
+            : "Click any two puzzle tiles to swap them and reconstruct our picture."}
         </p>
       </div>
 
-      {/* Frame of the hand-drawn portrait puzzle */}
+      {/* Frame of the portrait puzzle */}
       <div className="w-full max-w-md luxury-content-card sketch-border shadow-2xl p-5 sm:p-7 relative mb-8 rounded-2xl">
         <div className="tape-top" />
 
@@ -183,7 +183,7 @@ export default function PortraitReveal({ onNext, onPrev }) {
                 />
               </div>
               <span className="font-mono text-[10px] text-[#FFF8ED] mt-2 font-bold uppercase tracking-wider">
-                [ DRAWING REFERENCE PHOTO ]
+                [ MEMORY PREVIEW ]
               </span>
             </div>
           )}
@@ -193,7 +193,7 @@ export default function PortraitReveal({ onNext, onPrev }) {
             <div className="w-full h-full relative animate-fade-in">
               <img
                 src={activeSrc}
-                alt="Hand-drawn portrait of both of us"
+                alt="Cherished memory of both of us"
                 className="w-full h-full object-cover polaroid-develop rounded-lg"
               />
               <div className="absolute inset-0 ring-4 ring-[#D8B878]/50 rounded-lg pointer-events-none" />
@@ -263,7 +263,7 @@ export default function PortraitReveal({ onNext, onPrev }) {
               onClick={handleNext}
               className="px-10 py-4 bg-[#D8B878] text-[#1D0B16] font-bold rounded-full font-mono text-xs sm:text-sm tracking-[0.2em] uppercase flex items-center gap-2 shadow-lg hover:bg-[#EBD096] transition-all cursor-pointer group hover:scale-105"
             >
-              <span>DISCOVER FINAL MOMENT</span>
+              <span>PROCEED TO BIRTHDAY FINALE</span>
               <ArrowRight className="w-4 h-4 text-[#1D0B16] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -273,3 +273,4 @@ export default function PortraitReveal({ onNext, onPrev }) {
     </section>
   );
 }
+
