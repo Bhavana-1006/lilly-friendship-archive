@@ -24,7 +24,7 @@ export default function DobGate({ onUnlock }) {
 
   // Inputs
   const [day, setDay] = useState('');
-  const [month, setMonth] = useState('09');
+  const [month, setMonth] = useState('10');
   const [year, setYear] = useState('');
 
   // Status: 'idle' | 'verifying' | 'verified' | 'failed'
@@ -82,13 +82,12 @@ export default function DobGate({ onUnlock }) {
       const sanitizedDay = parseInt(day, 10);
       const sanitizedYear = parseInt(year, 10);
 
-      // Validation: Accepts any reasonable valid birthday date entry (e.g. Day 1-31, Year 1990-2015)
-      // or exact target match (e.g. Day 25, Month Sept)
-      const isValid = (
-        sanitizedDay >= 1 && sanitizedDay <= 31 &&
-        month &&
-        (!year || (sanitizedYear >= 1990 && sanitizedYear <= 2015))
-      );
+      // Strict Validation: ONLY accepts 6th October 2005 (Day: 6, Month: 10, Year: 2005)
+      const isCorrectDay = (sanitizedDay === 6);
+      const isCorrectMonth = (month === '10');
+      const isCorrectYear = (sanitizedYear === 2005 || year.trim() === '2005');
+
+      const isValid = isCorrectDay && isCorrectMonth && isCorrectYear;
 
       if (isValid) {
         soundFx.playUnlock();
